@@ -177,32 +177,79 @@
         switch (ch) {
           case "PADKO":
             img.src = "./img/PadKoS.webp";
+            history.replaceState(null, "", "?chName=padko");
             break;
           case "FIFTEEN":
             img.src = "./img/FifteenS.webp";
+            history.replaceState(null, "", "?chName=fifteen");
             break;
           case "LUTRA":
             img.src = "./img/CommonOtterS.webp";
+            history.replaceState(null, "", "?chName=lutralutra");
             break;
           case "OBEAR":
             img.src = "./img/ObearS.webp";
+            history.replaceState(null, "", "?chName=obear");
             break;
           case "CHILLA":
             img.src = "./img/ChillaS.webp";
+            history.replaceState(null, "", "?chName=chilla");
             break;
           case "OLDA":
             img.src = "./img/OldaS.webp";
+            history.replaceState(null, "", "?chName=olda");
             break;
           case "HAIZ":
             img.src = "./img/HaizS.webp";
+            history.replaceState(null, "", "?chName=haiz");
             break;
           case "AMRZS":
             img.src = "./img/AmrzsS.webp";
+            history.replaceState(null, "", "?chName=amrzs");
             break;
           default:
             img.src = "./img/squarelive.webp";
         }
       }
+
+      function webLoad() {
+        const chName = (new URLSearchParams(location.search)).get("chName");
+        const changeSelect = (value) => {
+          const chSelectElement = document.getElementById("vtuber_chName");
+          chSelectElement.value = value;
+          chSelectElement.onchange();
+        };
+        switch (chName) {
+          case "padko":
+            changeSelect("PADKO");
+            break;
+          case "fifteen":
+            changeSelect("FIFTEEN");
+            break;
+          case "lutralutra":
+            changeSelect("LUTRA");
+            break;
+          case "obear":
+            changeSelect("OBEAR");
+            break;
+          case "chilla":
+            changeSelect("CHILLA");
+            break;
+          case "olda":
+            changeSelect("OLDA");
+            break;
+          case "haiz":
+            changeSelect("HAIZ");
+            break;
+          case "amrzs":
+            changeSelect("AMRZS");
+            break;
+          default:
+            break;
+        }
+      }
+
+      webLoad();
     </script>
   </body>
 </html>
