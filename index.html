@@ -96,8 +96,8 @@
         <div class="col-lg-6 col-12 mb-3">
           <label for="sponsor_msg" class="form-label">
             <div class="d-flex">
-              留言（Super Chat，會顯示在直播，可留空）
-              （<div id="sponsor_msg_text_count">0</div>/25）
+              留言（SC，會顯示在直播，可留空）
+              <div id="sponsor_msg_text_count">（00/25）</div>
             </div>
           </label>
           <textarea type="text" class="form-control" id="sponsor_msg" name="sponsor_msg" placeholder="目前最多輸入25個字，只支援 中/英/數，請注意留言內容，不當留言將觸法！" style="height: 100px;" oninput="onSponsorMsgChange(this.value)" onchange="onSponsorMsgChange(this.value)"></textarea>
@@ -167,9 +167,9 @@
     <script>
       function onSponsorMsgChange(msg) {
         msg = msg || "";
-        const count = msg.length;
+        const count = `${msg.length}`.padStart(2, '0');
         const countElement = document.getElementById("sponsor_msg_text_count");
-        countElement.innerText = `${count}`;
+        countElement.innerText = `（${count}/25）`;
       }
 
       function changeCh(ch) {
