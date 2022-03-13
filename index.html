@@ -73,7 +73,7 @@
               <a href="https://www.youtube.com/channel/UCULLc5b5rzDNp9K-rtF8W5w" class="ch-link"><img src="./img/free-youtube-logo-icon-2431-thumb.png" />阿爾姿</a>
               ）
           </label>
-          <select class="form-control" id="vtuber_chName" name="vtuber_chName">
+          <select class="form-control" id="vtuber_chName" name="vtuber_chName" onchange="changeCh(this.value)">
             <option value="" style="display:none">請選擇您要贊助的頻道</option>
             <option value="PADKO">PADKO CH. 平平子</option>
             <option value="FIFTEEN">NO.FIFTEEN CH. 十五號</option>
@@ -153,6 +153,37 @@
     </footer>
 
     <script>
+      function changeCh(ch) {
+        const img = document.getElementById('img1');
+        switch (ch) {
+          case "PADKO":
+            img.src = "./img/PadKoS.webp";
+            break;
+          case "FIFTEEN":
+            img.src = "./img/FifteenS.webp";
+            break;
+          case "LUTRA":
+            img.src = "./img/CommonOtterS.webp";
+            break;
+          case "OBEAR":
+            img.src = "./img/ObearS.webp";
+            break;
+          case "CHILLA":
+            img.src = "./img/ChillaS.webp";
+            break;
+          case "OLDA":
+            img.src = "./img/OldaS.webp";
+            break;
+          case "HAIZ":
+            img.src = "./img/HaizS.webp";
+            break;
+          case "AMRZS":
+            img.src = "./img/AmrzsS.webp";
+            break;
+          default:
+            img.src = "./img/squarelive.webp";
+        }
+      }
     </script>
   </body>
 </html>
